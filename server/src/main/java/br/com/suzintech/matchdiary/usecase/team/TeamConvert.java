@@ -1,8 +1,8 @@
 package br.com.suzintech.matchdiary.usecase.team;
 
 import br.com.suzintech.matchdiary.database.entity.TeamEntity;
-import br.com.suzintech.matchdiary.domain.team.TeamRequest;
-import br.com.suzintech.matchdiary.domain.team.TeamResponse;
+import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;
+import br.com.suzintech.matchdiary.web.domain.team.TeamResponse;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,5 +23,13 @@ public class TeamConvert {
                 .state(request.getState())
                 .photoUrl(request.getPhotoUrl())
                 .build();
+    }
+
+    public TeamEntity executar(TeamRequest request, TeamEntity entity) {
+        entity.setName(request.getName());
+        entity.setState(request.getState());
+        entity.setPhotoUrl(request.getPhotoUrl());
+
+        return entity;
     }
 }

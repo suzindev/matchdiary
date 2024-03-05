@@ -1,8 +1,8 @@
 package br.com.suzintech.matchdiary.web.controller;
 
-import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;
-import br.com.suzintech.matchdiary.web.domain.team.TeamResponse;
-import br.com.suzintech.matchdiary.service.team.TeamService;
+import br.com.suzintech.matchdiary.service.match.MatchService;
+import br.com.suzintech.matchdiary.web.domain.match.MatchRequest;
+import br.com.suzintech.matchdiary.web.domain.match.MatchResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/team")
+@RequestMapping("/api/match")
 @RequiredArgsConstructor
-public class TeamController {
+public class MatchController {
 
-    private final TeamService service;
+    private final MatchService service;
 
     @GetMapping("/{id}")
     @Transactional(readOnly = true)
-    public ResponseEntity<TeamResponse> getById(@PathVariable("id") Long id) {
+    public ResponseEntity<MatchResponse> getById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(service.getById(id));
     }
 
     @GetMapping
     @Transactional(readOnly = true)
-    public ResponseEntity<List<TeamResponse>> getAll() {
+    public ResponseEntity<List<MatchResponse>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<TeamResponse> add(@RequestBody TeamRequest request) {
+    public ResponseEntity<MatchResponse> add(@RequestBody MatchRequest request) {
         return ResponseEntity.ok(service.add(request));
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<TeamResponse> update(@PathVariable("id") Long id, @RequestBody TeamRequest request) {
+    public ResponseEntity<MatchResponse> update(@PathVariable("id") Long id, @RequestBody MatchRequest request) {
         return ResponseEntity.ok(service.update(request, id));
     }
 

@@ -1,8 +1,8 @@
 package br.com.suzintech.matchdiary.service.team;
 
-import br.com.suzintech.matchdiary.domain.team.TeamRequest;
-import br.com.suzintech.matchdiary.domain.team.TeamResponse;
 import br.com.suzintech.matchdiary.usecase.team.*;
+import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;
+import br.com.suzintech.matchdiary.web.domain.team.TeamResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,12 +45,7 @@ public class TeamService {
     public TeamResponse update(TeamRequest request, Long id) {
         validate.executar(request);
 
-        var entity = consultaTeamPorId.executar(id);
-        entity.setName(request.getName());
-        entity.setState(request.getState());
-        entity.setPhotoUrl(request.getPhotoUrl());
-
-        return convert.executar(salvar.executar(entity));
+        return convert.executar(salvar.executar(convert.executar(request, consultaTeamPorId.executar(id))));
     }
 
     public String delete(final Long id) {

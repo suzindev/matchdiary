@@ -1,6 +1,6 @@
 package br.com.suzintech.matchdiary.usecase.team;
 
-import br.com.suzintech.matchdiary.domain.team.TeamRequest;
+import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;

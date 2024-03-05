@@ -1,4 +1,4 @@
-package br.com.suzintech.matchdiary.domain.team;
+package br.com.suzintech.matchdiary.web.domain.team;
 
 import lombok.*;
 
