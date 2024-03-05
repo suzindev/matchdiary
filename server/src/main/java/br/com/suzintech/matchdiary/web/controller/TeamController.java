@@ -2,7 +2,7 @@ package br.com.suzintech.matchdiary.web.controller;
 
 import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;
 import br.com.suzintech.matchdiary.web.domain.team.TeamResponse;
-import br.com.suzintech.matchdiary.service.team.TeamService;
+import br.com.suzintech.matchdiary.service.TeamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

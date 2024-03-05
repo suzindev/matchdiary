@@ -1,4 +1,4 @@
-package br.com.suzintech.matchdiary.service.team;
+package br.com.suzintech.matchdiary.service;
 
 import br.com.suzintech.matchdiary.usecase.team.*;
 import br.com.suzintech.matchdiary.web.domain.team.TeamRequest;

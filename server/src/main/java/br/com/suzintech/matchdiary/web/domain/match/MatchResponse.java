@@ -1,5 +1,6 @@
 package br.com.suzintech.matchdiary.web.domain.match;
 
+import br.com.suzintech.matchdiary.web.domain.team.TeamResponse;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class MatchResponse {
     private LocalDate date;
     private Integer scoreTeamOne;
     private Integer scoreTeamTwo;
-    private Long idTeamOne;
-    private Long idTeamTwo;
-    private Long idTeamSupported;
+    private TeamResponse idTeamOne;
+    private TeamResponse idTeamTwo;
+    private TeamResponse idTeamSupported;
 }

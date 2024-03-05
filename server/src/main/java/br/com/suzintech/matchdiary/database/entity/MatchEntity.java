@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "team")
+@Table(name = "match")
 public class MatchEntity {
 
     @Id

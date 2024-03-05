@@ -1,6 +1,6 @@
 package br.com.suzintech.matchdiary.web.controller;
 
-import br.com.suzintech.matchdiary.service.match.MatchService;
+import br.com.suzintech.matchdiary.service.MatchService;
 import br.com.suzintech.matchdiary.web.domain.match.MatchRequest;
 import br.com.suzintech.matchdiary.web.domain.match.MatchResponse;
 import lombok.RequiredArgsConstructor;
