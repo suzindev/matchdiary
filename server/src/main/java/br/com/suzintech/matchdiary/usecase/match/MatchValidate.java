@@ -14,5 +14,9 @@ public class MatchValidate {
                 || Objects.isNull(request.getScoreTeamOne()) || Objects.isNull(request.getScoreTeamTwo())) {
             throw new RuntimeException("É obrigatório preencher os campos.");
         }
+
+        if (request.getIdTeamOne().equals(request.getIdTeamTwo())) {
+            throw new RuntimeException("Os dois times não podem ser iguais.");
+        }
     }
 }
